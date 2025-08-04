@@ -1,27 +1,31 @@
-// frontend/src/components/Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 
 function Navbar() {
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (id) => {
+    if (id === "portfolio") {
+      window.location.href = "https://dev-aftabbashir-official.pantheonsite.io/";
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }
+    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
-      <div className="logo" onClick={() => scrollToSection("home")}>
+      <div className="logo" onClick={() => handleNavClick("home")}>
         Freelancing Agency
       </div>
-      <ul className="nav-links">
-        <li onClick={() => scrollToSection("home")}>Home</li>
-        <li onClick={() => scrollToSection("about")}>About</li>
-        <li onClick={() => scrollToSection("form")}>Form</li>
-        <li onClick={() => scrollToSection("contact")}>Contact Us</li>
-        <li onClick={() => (window.location.href = "https://dev-aftabbashir-official.pantheonsite.io/")}>
-          Portfolio
-        </li>
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <li onClick={() => handleNavClick("home")}>Home</li>
+        <li onClick={() => handleNavClick("about")}>About</li>
+        <li onClick={() => handleNavClick("form")}>Form</li>
+        <li onClick={() => handleNavClick("contact")}>Contact</li>
+        <li onClick={() => handleNavClick("portfolio")}>Portfolio</li>
       </ul>
     </nav>
   );

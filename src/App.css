@@ -28,6 +28,7 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  transition: all 0.3s ease-in-out;
 }
 .navbar .nav-links li {
   cursor: pointer;
@@ -36,6 +37,41 @@ body {
 }
 .navbar .nav-links li:hover {
   color: #f39c12;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Mobile Navbar */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 220px;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px;
+    gap: 15px;
+    border-left: 2px solid #f39c12;
+    /* removed overflow hidden */
+  }
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* Hero Section */
@@ -190,15 +226,13 @@ body {
   flex: 1 1 250px;
   color: #ddd;
   transition: transform 0.3s, background 0.3s;
+  border-radius: 10px;
   animation: fadeInUp 1.2s ease;
 }
-/* Contact Card Hover Effects */
-.contact-hover-card:hover {
+.contact-card:hover {
   transform: scale(1.05);
-  border-color: #f39c12;
-  box-shadow: 0 0 15px rgba(243, 156, 18, 0.6);
+  border: 2px solid #f39c12;
 }
-
 .contact-card h3 {
   color: #f39c12;
   margin-bottom: 10px;
@@ -250,6 +284,10 @@ body {
   }
   .agency-form {
     padding: 25px;
+  }
+  .home-section {
+    padding-top: 100px; /* added top padding for mobile */
+    height: auto; /* prevent shrinking */
   }
   .home-section h1 {
     font-size: 2.5rem;

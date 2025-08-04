@@ -8,6 +8,7 @@ function AgencyForm() {
   const [phone, setPhone] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [projectScope, setProjectScope] = useState("");
+  const [message, setMessage] = useState(""); // For success/error message
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,15 +26,23 @@ function AgencyForm() {
         }),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        window.location.href = "https://dev-aftabbashir-official.pantheonsite.io/";
+        setMessage("Form submitted successfully!");
+        // Clear fields
+        setName("");
+        setFatherName("");
+        setEmail("");
+        setPhone("");
+        setWhatsapp("");
+        setProjectScope("");
       } else {
-        const data = await res.json();
-        alert(data.message || "Error submitting form");
+        setMessage(data.message || "Error submitting form.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Server error. Please try again.");
+      setMessage("Server error. Please try again.");
     }
   };
 
@@ -41,6 +50,7 @@ function AgencyForm() {
     <section className="form-contact-section" id="form">
       <form onSubmit={handleSubmit} className="agency-form">
         <h2>Freelancing Agency Form</h2>
+        {message && <p style={{ color: "#f39c12", textAlign: "center" }}>{message}</p>}
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" required />
         <input value={fatherName} onChange={(e) => setFatherName(e.target.value)} placeholder="Father's Name" required />
         <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
