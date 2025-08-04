@@ -38,7 +38,7 @@ function AgencyForm() {
   };
 
   return (
-    <div className="form-container">
+    <section className="form-contact-section" id="form">
       <form onSubmit={handleSubmit} className="agency-form">
         <h2>Freelancing Agency Form</h2>
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Full Name" required />
@@ -49,7 +49,7 @@ function AgencyForm() {
         <textarea value={projectScope} onChange={(e) => setProjectScope(e.target.value)} placeholder="Project Scope / Details" />
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </section>
   );
 }
 
