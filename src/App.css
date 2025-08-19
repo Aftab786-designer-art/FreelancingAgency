@@ -1,4 +1,4 @@
-/* General */
+/* ---------- General ---------- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -7,7 +7,11 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+main {
+  overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
   background: #111;
   color: #fff;
@@ -19,22 +23,26 @@ body {
   top: 0;
   z-index: 1000;
 }
+
 .navbar .logo {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
 }
+
 .navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   transition: all 0.3s ease-in-out;
 }
+
 .navbar .nav-links li {
   cursor: pointer;
   font-size: 1rem;
   transition: color 0.3s;
 }
+
 .navbar .nav-links li:hover {
   color: #f39c12;
 }
@@ -47,8 +55,234 @@ body {
   color: #fff;
 }
 
-/* Mobile Navbar */
+/* ---------- Hero Section ---------- */
+.home-section {
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-photo/technology-abstract-background-with-connecting-lines-dots_1048-11956.jpg")
+    center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.home-section h1 {
+  font-size: 3.5rem;
+  animation: fadeInUp 1s ease;
+}
+
+.home-section p {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  max-width: 700px;
+  animation: fadeInUp 1.3s ease;
+}
+
+.home-section button {
+  padding: 12px 28px;
+  background: #f39c12;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  animation: fadeInUp 1.6s ease;
+  border-radius: 6px;
+}
+
+.home-section button:hover {
+  background: #d87f00;
+}
+
+/* ---------- About Section ---------- */
+.about-section {
+  padding: 80px 50px;
+  background: #111;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #f39c12;
+  animation: fadeInUp 1s ease;
+}
+
+.about-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: #1a1a1a;
+  padding: 30px;
+  flex: 1 1 300px;
+  color: #ddd;
+  transition: transform 0.3s, background 0.3s;
+  animation: fadeInUp 1.3s ease;
+  border-radius: 10px;
+}
+
+.about-card:hover {
+  transform: scale(1.02);
+  background: #222;
+}
+
+.about-card h3 {
+  color: #f39c12;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Form Section ---------- */
+.form-contact-section {
+  padding: 80px 50px 120px;
+  background: #000;
+}
+
+.agency-form {
+  background: #1a1a1a;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  animation: fadeInUp 1s ease;
+  border-radius: 10px;
+}
+
+.agency-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #f39c12;
+}
+
+.agency-form input,
+.agency-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 1rem;
+  transition: border 0.3s;
+  border-radius: 6px;
+}
+
+.agency-form input:focus,
+.agency-form textarea:focus {
+  border: 1px solid #f39c12;
+  outline: none;
+}
+
+.agency-form button {
+  width: 100%;
+  padding: 14px;
+  background: #f39c12;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 6px;
+}
+
+.agency-form button:hover {
+  background: #d87f00;
+}
+
+/* ---------- Contact Section ---------- */
+.contact-container {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-container h1 {
+  font-size: 2.8rem;
+  color: #f39c12;
+  margin-bottom: 35px;
+  animation: fadeInUp 1s ease;
+  text-align: center;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.contact-card {
+  background: #1a1a1a;
+  padding: 30px;
+  flex: 1 1 250px;
+  color: #ddd;
+  transition: transform 0.3s, background 0.3s;
+  border-radius: 10px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #f39c12;
+}
+
+.contact-card h3 {
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.contact-card p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact-card p a:hover {
+  color: #f39c12;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #f39c12;
+  margin-bottom: 15px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #f39c12;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive (≤900px) ---------- */
 @media (max-width: 900px) {
+  /* Navbar */
   .hamburger {
     display: block;
   }
@@ -65,208 +299,23 @@ body {
     padding: 20px;
     gap: 15px;
     border-left: 2px solid #f39c12;
-    /* removed overflow hidden */
   }
   .nav-links.active {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
   }
-}
 
-/* Hero Section */
-.home-section {
-  height: 100vh;
-  background: url("https://img.freepik.com/free-photo/technology-abstract-background-with-connecting-lines-dots_1048-11956.jpg") center/cover no-repeat fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  padding: 0 20px;
-}
-.home-section h1 {
-  font-size: 3.5rem;
-  animation: fadeInUp 1s ease;
-}
-.home-section p {
-  font-size: 1.3rem;
-  margin: 20px 0;
-  max-width: 700px;
-  animation: fadeInUp 1.3s ease;
-}
-.home-section button {
-  padding: 12px 28px;
-  background: #f39c12;
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  animation: fadeInUp 1.6s ease;
-}
-.home-section button:hover {
-  background: #d87f00;
-}
+  /* Hero */
+  .home-section {
+    padding-top: 100px;
+    height: auto;
+  }
+  .home-section h1 {
+    font-size: 2.5rem;
+  }
 
-/* About Section */
-.about-section {
-  padding: 80px 50px;
-  background: #111;
-  text-align: center;
-}
-.about-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  color: #f39c12;
-  animation: fadeInUp 1s ease;
-}
-.about-cards {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.about-card {
-  background: #1a1a1a;
-  padding: 30px;
-  flex: 1 1 300px;
-  color: #ddd;
-  transition: transform 0.3s, background 0.3s;
-  animation: fadeInUp 1.3s ease;
-}
-.about-card:hover {
-  transform: scale(1.02);
-  background: #222;
-}
-.about-card h3 {
-  color: #f39c12;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-.about-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Form + Contact Section */
-.form-contact-section {
-  padding: 80px 50px 120px;
-  background: #000;
-}
-
-/* Full-width Form */
-.agency-form {
-  background: #1a1a1a;
-  padding: 40px;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 80px;
-  animation: fadeInUp 1s ease;
-}
-.agency-form h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #f39c12;
-}
-.agency-form input,
-.agency-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  font-size: 1rem;
-  transition: border 0.3s;
-}
-.agency-form input:focus,
-.agency-form textarea:focus {
-  border: 1px solid #f39c12;
-  outline: none;
-}
-.agency-form button {
-  width: 100%;
-  padding: 14px;
-  background: #f39c12;
-  color: #fff;
-  font-size: 1.1rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.agency-form button:hover {
-  background: #d87f00;
-}
-
-/* Contact Section */
-.contact-container {
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.contact-container h1 {
-  font-size: 2.8rem;
-  color: #f39c12;
-  margin-bottom: 35px;
-  animation: fadeInUp 1s ease;
-  text-align: center;
-}
-.contact-cards {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  padding-bottom: 40px;
-}
-.contact-card {
-  background: #1a1a1a;
-  padding: 30px;
-  flex: 1 1 250px;
-  color: #ddd;
-  transition: transform 0.3s, background 0.3s;
-  border-radius: 10px;
-  animation: fadeInUp 1.2s ease;
-}
-.contact-card:hover {
-  transform: scale(1.05);
-  border: 2px solid #f39c12;
-}
-.contact-card h3 {
-  color: #f39c12;
-  margin-bottom: 10px;
-}
-.contact-card p a {
-  text-decoration: none;
-  color: #fff;
-}
-.contact-card p a:hover {
-  color: #f39c12;
-}
-.icon {
-  font-size: 2.5rem;
-  color: #f39c12;
-  margin-bottom: 15px;
-}
-
-/* Footer */
-.footer {
-  background: #f39c12;
-  padding: 20px;
-  text-align: center;
-  color: #000;
-  font-weight: 500;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 900px) {
+  /* About Section */
   .about-cards {
     flex-direction: column;
     align-items: center;
@@ -276,20 +325,60 @@ body {
     max-width: 90%;
     text-align: center;
   }
+
+  /* Contact Section */
   .contact-cards {
     flex-wrap: wrap;
   }
   .contact-card {
     max-width: 100%;
   }
+
+  /* Form Section */
   .agency-form {
     padding: 25px;
   }
-  .home-section {
-    padding-top: 100px; /* added top padding for mobile */
-    height: auto; /* prevent shrinking */
-  }
+}
+
+/* ---------- Extra Small (≤500px) ---------- */
+@media (max-width: 500px) {
+  /* Hero */
   .home-section h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+  .home-section p {
+    font-size: 1rem;
+  }
+  .home-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Cards */
+  .about-cards,
+  .contact-cards {
+    gap: 15px;
+  }
+  .about-card p,
+  .contact-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Form */
+  .agency-form input,
+  .agency-form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+  .agency-form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  /* Section spacing */
+  .about-section,
+  .form-contact-section {
+    padding: 50px 20px;
   }
 }
