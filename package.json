@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://Aftab786-designer-art.github.io/FreelancingAgencySite",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
